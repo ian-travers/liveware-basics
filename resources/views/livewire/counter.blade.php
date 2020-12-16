@@ -1,4 +1,4 @@
-<div xmlns:wire="http://www.w3.org/1999/xhtml">
+<div>
     <div class="mt-6 flex justify-center">
         <button
             class="py-3 px-6 mr-2 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500   transition duration-300 ease-in-out"

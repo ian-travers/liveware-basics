@@ -10,7 +10,8 @@
 </head>
 <body>
 <livewire:counter/>
-`
+<hr>
+<livewire:contact-form/>
 <!-- Scripts -->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />
