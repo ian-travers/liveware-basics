@@ -27,6 +27,7 @@ class ContactForm extends Component
 
     public function submitForm()
     {
+        sleep(2);
         $contact = $this->validate();
 
         $this->successMessage = 'We received your message successfully and will get back to you shortly!';
