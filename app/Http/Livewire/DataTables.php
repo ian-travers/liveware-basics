@@ -16,4 +16,9 @@ class DataTables extends Component
             'users' => User::paginate(6),
         ]);
     }
+
+    public function paginationView()
+    {
+        return 'livewire.custom-pagination-links-view';
+    }
 }
