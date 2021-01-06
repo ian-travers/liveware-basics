@@ -10,6 +10,8 @@ class DataTables extends Component
 {
     use WithPagination;
 
+    protected $queryString = ['search', 'active', 'sortAsc', 'sortField'];
+
     public $active = true;
     public $search;
     public $sortField;
