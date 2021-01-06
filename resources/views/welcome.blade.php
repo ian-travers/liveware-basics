@@ -94,6 +94,11 @@
 
 <hr>
 <livewire:contact-form/>
+
+<hr>
+<h2 class="mt-4 text-lg font-semibold">Livewire Data Tables</h2>
+<livewire:data-tables/>
+
 <!-- Scripts -->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />
