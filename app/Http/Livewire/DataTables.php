@@ -17,8 +17,8 @@ class DataTables extends Component
         ]);
     }
 
-//    public function paginationView()
-//    {
-//        return 'livewire.custom-pagination-links-view';
-//    }
+    public function paginationView()
+    {
+        return 'vendor.livewire.tailwind';
+    }
 }
