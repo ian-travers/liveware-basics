@@ -12,6 +12,15 @@ class DataTables extends Component
 
     public $active = true;
     public $search;
+    public $sortField;
+    public $sortAsc = true;
+
+    public function sortBy(string $field)
+    {
+        $this->sortAsc = $this->sortField == $field ? !$this->sortAsc : true;
+
+        $this->sortField = $field;
+    }
 
     public function updatingSearch()
     {
@@ -27,6 +36,9 @@ class DataTables extends Component
                     ->orWhere('email', 'like', "%{$this->search}%");
             })
                 ->where('active', $this->active)
+                ->when($this->sortField, function ($query) {
+                    $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
+                })
                 ->paginate(6),
         ]);
     }

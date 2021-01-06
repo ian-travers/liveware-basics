@@ -41,11 +41,27 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead>
                     <tr>
-                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Name
+                        <th class="px-6 py-3 bg-gray-50">
+                            <div class="flex items-center">
+                                <button
+                                    wire:click="sortBy('name')"
+                                    class="text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                >
+                                    Name
+                                </button>
+                                <span>ICO</span>
+                            </div>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Email
+                        <th class="px-6 py-3 bg-gray-50">
+                            <div class="flex items-center">
+                                <button
+                                    wire:click="sortBy('email')"
+                                    class="text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                >
+                                    Email
+                                </button>
+                                <span>ICO</span>
+                            </div>
                         </th>
                         <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Status
