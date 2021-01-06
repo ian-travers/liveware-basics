@@ -49,7 +49,26 @@
                                 >
                                     Name
                                 </button>
-                                <span>ICO</span>
+                                @if($sortField != 'name')
+                                    <span></span>
+                                @elseif($sortAsc)
+                                    <svg class="ml-2 w-3" viewBox="0 0 20 20">
+                                        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="icon-shape">
+                                                <polygon
+                                                    points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                @else
+                                    <svg class="ml-2 w-3" viewBox="0 0 20 20">
+                                        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="icon-shape">
+                                                <polygon id="Combined-Shape" points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                @endif
                             </div>
                         </th>
                         <th class="px-6 py-3 bg-gray-50">
@@ -60,7 +79,26 @@
                                 >
                                     Email
                                 </button>
-                                <span>ICO</span>
+                                @if($sortField != 'email')
+                                    <span></span>
+                                @elseif($sortAsc)
+                                    <svg class="ml-2 w-3" viewBox="0 0 20 20">
+                                        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="icon-shape">
+                                                <polygon
+                                                    points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                @else
+                                    <svg class="ml-2 w-3" viewBox="0 0 20 20">
+                                        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="icon-shape">
+                                                <polygon id="Combined-Shape" points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                @endif
                             </div>
                         </th>
                         <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -90,11 +128,13 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 @if ($user->active)
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                         Active
                                      </span>
                                 @else
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-red-100 text-red-800">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-red-100 text-red-800">
                                         Inactive
                                     </span>
                                 @endif
