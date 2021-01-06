@@ -13,6 +13,11 @@ class DataTables extends Component
     public $active = true;
     public $search;
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function render()
     {
         return view('livewire.data-tables', [
