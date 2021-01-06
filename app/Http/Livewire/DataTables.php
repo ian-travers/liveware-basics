@@ -10,10 +10,12 @@ class DataTables extends Component
 {
     use WithPagination;
 
+    public $active = true;
+
     public function render()
     {
         return view('livewire.data-tables', [
-            'users' => User::paginate(6),
+            'users' => User::where('active', $this->active)->paginate(6),
         ]);
     }
 
