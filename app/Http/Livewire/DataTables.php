@@ -17,6 +17,7 @@ class DataTables extends Component
     {
         return view('livewire.data-tables', [
             'users' => User::where('name', 'like', "%{$this->search}%")
+                ->orWhere('email', 'like', "%{$this->search}%")
                 ->where('active', $this->active)
                 ->paginate(6),
         ]);
