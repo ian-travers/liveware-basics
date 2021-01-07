@@ -3,14 +3,18 @@
 namespace Tests\Feature;
 
 use App\Http\Livewire\ContactForm;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire;
 use Tests\TestCase;
 
 class ContactFormTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     function main_page_contains_contact_form_livewire_component()
     {
+        $this->withoutExceptionHandling();
         $this->get('/')
             ->assertSeeLivewire('contact-form');
     }

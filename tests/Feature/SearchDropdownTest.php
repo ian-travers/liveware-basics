@@ -3,11 +3,14 @@
 namespace Tests\Feature;
 
 use App\Http\Livewire\SearchDropdown;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class SearchDropdownTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function main_page_contains_search_dropdown_livewire_component()
     {
