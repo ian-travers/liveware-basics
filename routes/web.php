@@ -9,3 +9,9 @@ Route::get('/', function () {
         'posts' => Post::all(),
     ]);
 });
+
+Route::get('/post/{post}', function (Post $post) {
+    return view('post.show', [
+        'post' => $post,
+    ]);
+})->name('post.show');
