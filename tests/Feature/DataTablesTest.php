@@ -93,26 +93,7 @@ class DataTablesTest extends TestCase
     /** @test */
     function datatables_sorts_name_asc_correctly()
     {
-        $userC = User::create([
-            'name' => 'Cathy C',
-            'email' => 'cathy@cathy.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userA = User::create([
-            'name' => 'Andre A',
-            'email' => 'andre@andre.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userB = User::create([
-            'name' => 'Brian B',
-            'email' => 'brian@brian.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
+        $this->prepareDataToSorting();
 
         Livewire::test(DataTables::class)
             ->call('sortBy', 'name')
@@ -122,26 +103,7 @@ class DataTablesTest extends TestCase
     /** @test */
     function datatables_sorts_name_desc_correctly()
     {
-        $userC = User::create([
-            'name' => 'Cathy C',
-            'email' => 'cathy@cathy.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userA = User::create([
-            'name' => 'Andre A',
-            'email' => 'andre@andre.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userB = User::create([
-            'name' => 'Brian B',
-            'email' => 'brian@brian.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
+        $this->prepareDataToSorting();
 
         Livewire::test(DataTables::class)
             ->call('sortBy', 'name')
@@ -152,26 +114,7 @@ class DataTablesTest extends TestCase
     /** @test */
     function datatables_sorts_email_asc_correctly()
     {
-        $userC = User::create([
-            'name' => 'Cathy C',
-            'email' => 'cathy@cathy.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userA = User::create([
-            'name' => 'Andre A',
-            'email' => 'andre@andre.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
-
-        $userB = User::create([
-            'name' => 'Brian B',
-            'email' => 'brian@brian.com',
-            'password' => bcrypt('password'),
-            'active' => true,
-        ]);
+        $this->prepareDataToSorting();
 
         Livewire::test(DataTables::class)
             ->call('sortBy', 'email')
@@ -181,30 +124,35 @@ class DataTablesTest extends TestCase
     /** @test */
     function datatables_sorts_email_desc_correctly()
     {
-        $userC = User::create([
+        $this->prepareDataToSorting();
+
+        Livewire::test(DataTables::class)
+            ->call('sortBy', 'email')
+            ->call('sortBy', 'email')
+            ->assertSeeInOrder(['Cathy C', 'Brian B', 'Andre A']);
+    }
+
+    protected function prepareDataToSorting(): void
+    {
+        User::create([
             'name' => 'Cathy C',
             'email' => 'cathy@cathy.com',
             'password' => bcrypt('password'),
             'active' => true,
         ]);
 
-        $userA = User::create([
+        User::create([
             'name' => 'Andre A',
             'email' => 'andre@andre.com',
             'password' => bcrypt('password'),
             'active' => true,
         ]);
 
-        $userB = User::create([
+        User::create([
             'name' => 'Brian B',
             'email' => 'brian@brian.com',
             'password' => bcrypt('password'),
             'active' => true,
         ]);
-
-        Livewire::test(DataTables::class)
-            ->call('sortBy', 'email')
-            ->call('sortBy', 'email')
-            ->assertSeeInOrder(['Cathy C', 'Brian B', 'Andre A']);
     }
 }
