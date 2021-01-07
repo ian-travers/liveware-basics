@@ -99,6 +99,17 @@
 <h2 class="mt-4 text-lg font-semibold">Livewire Data Tables</h2>
 <livewire:data-tables/>
 
+<div class="my-8">
+    <hr>
+    <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts with Comments</h2>
+
+    <ul class="list-disc mt-4">
+        @foreach ($posts as $post)
+            <li><a href="#" class="text-blue-600">{{ $post->title }}</a></li>
+        @endforeach
+    </ul>
+</div>
+
 <!-- Scripts -->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />
