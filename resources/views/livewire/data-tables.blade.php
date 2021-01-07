@@ -41,7 +41,7 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead>
                     <tr>
-                        <th class="px-6 py-3 bg-gray-50">
+                        <th class="w-4/12 px-6 py-3 bg-gray-50">
                             <div class="flex items-center">
                                 <button
                                     wire:click="sortBy('name')"
@@ -56,7 +56,7 @@
                                 ></x-sort-icon>
                             </div>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50">
+                        <th class="w-4/12 px-6 py-3 bg-gray-50">
                             <div class="flex items-center">
                                 <button
                                     wire:click="sortBy('email')"
