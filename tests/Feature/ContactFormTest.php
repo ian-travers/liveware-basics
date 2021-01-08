@@ -14,7 +14,6 @@ class ContactFormTest extends TestCase
     /** @test */
     function main_page_contains_contact_form_livewire_component()
     {
-        $this->withoutExceptionHandling();
         $this->get('/')
             ->assertSeeLivewire('contact-form');
     }

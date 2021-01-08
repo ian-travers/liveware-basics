@@ -110,6 +110,13 @@
     </ul>
 </div>
 
+<div class="my-8">
+    <hr>
+    <h2 class="text-lg font-semibold mt-4">Polling example</h2>
+
+    <livewire:poll-example/>
+</div>
+
 <!-- Scripts -->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />

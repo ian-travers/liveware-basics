@@ -17,7 +17,7 @@ use Illuminate\Support\Carbon;
  * @property string $content
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property-read Post $post
+ * @property-read \App\Models\Post $post
  * @method static Builder|Comment newModelQuery()
  * @method static Builder|Comment newQuery()
  * @method static Builder|Comment query()
