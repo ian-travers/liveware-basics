@@ -29,6 +29,11 @@ class PostEdit extends Component
         $this->content = $post->content;
     }
 
+    public function updatedPhoto()
+    {
+        $this->validate();
+    }
+
     public function submitForm()
     {
         $this->validate();
