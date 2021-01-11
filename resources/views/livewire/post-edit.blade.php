@@ -30,7 +30,7 @@
             </div>
         </div>
     @endif
-    <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+    <form wire:submit.prevent="submitForm" action="#" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mt-6 sm:mt-5">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
@@ -88,6 +88,7 @@
                     class="mt-2 sm:mt-0 sm:col-span-2"
                 >
                     <input
+                        wire:model="photo"
                         type="file"
                         name="photo"
                     >
