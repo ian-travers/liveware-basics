@@ -87,11 +87,24 @@
                 <div
                     class="mt-2 sm:mt-0 sm:col-span-2 relative"
                 >
-                    <input
-                        wire:model="photo"
-                        type="file"
-                        name="photo"
+                    <div
+                        class=""
+                        x-data="{ isUploading: false, progress: 0 }"
+                        x-on:livewire-upload-start="isUploading = true"
+                        x-on:livewire-upload-finish="isUploading = false"
+                        x-on:livewire-upload-error="isUploading = false"
+                        x-on:livewire-upload-progress="progress = $event.detail.progress"
                     >
+                        <input
+                            wire:model="photo"
+                            type="file"
+                            name="photo"
+                        >
+                        <!-- Progress Bar -->
+                        <div x-show="isUploading" class="mt-3">
+                            <progress max="100" x-bind:value="progress" class="w-full"></progress>
+                        </div>
+                    </div>
                     @error('photo')
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
                     @enderror
@@ -115,6 +128,7 @@
                             </path>
                         </svg>
                     </div>
+
                     <div class="mt-4">
                         @if($photo)
                             <img src="{{ $photo->temporaryUrl() }}" alt="temp">
