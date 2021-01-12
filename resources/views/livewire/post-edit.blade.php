@@ -102,7 +102,10 @@
                         >
                         <!-- Progress Bar -->
                         <div x-show="isUploading" class="mt-3">
-                            <progress max="100" x-bind:value="progress" class="w-full"></progress>
+                            <div class="relative">
+                                <p class="absolute z-10 text-white left-3 top-0.5" x-text="progress + '%'"></p>
+                                <progress max="100" x-bind:value="progress" class="w-full relative"></progress>
+                            </div>
                         </div>
                     </div>
                     @error('photo')
