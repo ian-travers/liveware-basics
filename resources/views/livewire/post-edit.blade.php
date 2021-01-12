@@ -96,7 +96,9 @@
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
                     @enderror
                     <div class="mt-4">
-                        @if($post->photo)
+                        @if($photo)
+                            <img src="{{ $photo->temporaryUrl() }}" alt="temp">
+                        @elseif($post->photo)
                             <img src="{{ Storage::url($post->photo) }}" alt="cover">
                         @endif
                     </div>
