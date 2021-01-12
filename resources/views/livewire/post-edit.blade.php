@@ -1,3 +1,5 @@
+@php /** @var \App\Models\Post $post */ @endphp
+
 <div class="my-2">
     @if($successMessage)
         <div class="bg-green-50 p-4 mt-4 rounded-md">
@@ -134,7 +136,7 @@
 
                     <div class="mt-4">
                         @if($photo)
-                            <img src="{{ $photo->temporaryUrl() }}" alt="temp">
+                            <img src="{{ $tempUrl }}" alt="temp">
                         @elseif($post->photo)
                             <img src="{{ Storage::url($post->photo) }}" alt="cover">
                         @endif
