@@ -122,6 +122,11 @@
     <livewire:poll-example/>
 </div>
 
+<div class="my-8">
+    <hr>
+    <h2 class="text-lg font-semibold mt-4">Events example with tags</h2>
+</div>
+
 <!-- Scripts -->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />
