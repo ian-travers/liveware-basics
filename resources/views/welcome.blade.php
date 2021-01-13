@@ -125,10 +125,27 @@
 <div class="my-8">
     <hr>
     <h2 class="text-lg font-semibold mt-4">Events example with tags</h2>
+    <div class="mt-4">
+        <div
+            class="w-1/2 border px-4 py-2 textarea"
+            x-data
+            x-init="
+            new Taggle($el, {
+                tags: ['there', 'are', 'prefilled', 'tags'],
+                onTagAdd: function(e, tag) {
+                    console.log('You added: ' + tag);
+                }
+            })
+        "
+        >
+
+        </div>
+        <div class="h-96"></div>
+    </div>
 </div>
 
 <!-- Scripts -->
-<script src="{{ mix('js/app.js', 'build') }}"></script>
 <livewire:scripts />
+<script src="{{ mix('js/app.js', 'build') }}"></script>
 </body>
 </html>
