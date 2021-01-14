@@ -1,5 +1,6 @@
 <div
     class="w-1/2 border px-4 py-2 textarea"
+    wire:ignore
     x-data
     x-init="
             new Taggle($el, {
