@@ -11,6 +11,10 @@
                 onTagRemove: function(e, tag) {
                     Livewire.emit('tagRemoved', tag);
                 }
+            });
+
+            Livewire.on('tagAddedFromBackend', tag => {
+                alert('A tag was added: ' + tag);
             })
         "
 >
