@@ -5,7 +5,10 @@
             new Taggle($el, {
                 tags: {{ $tags }},
                 onTagAdd: function(e, tag) {
-                    console.log('You added: ' + tag);
+                    Livewire.emit('tagAdded', tag);
+                },
+                onTagRemove: function(e, tag) {
+                    Livewire.emit('tagRemoved', tag);
                 }
             })
         "
